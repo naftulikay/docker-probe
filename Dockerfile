@@ -5,7 +5,9 @@ MAINTAINER Naftuli Kay <rfkrocktk@gmail.com>
 ENV BUILD_DATE=20161207
 
 # packages
-ENV SYSTEM_PACKAGES="man-db man-pages openssl-devel python-pip tmux nc nmap vim"
+ENV SYSTEM_PACKAGES="jq man-db man-pages openssl-devel python-pip tmux nc nmap vim wget"
+ENV REINSTALL_SYSTEM_PACKAGES="curl"
+
 ENV PYTHON_PACKAGES="awscli ipython requests"
 
 # install the man pages, glorious man pages
@@ -19,6 +21,9 @@ RUN yum install -y epel-release >/dev/null
 
 # install system packages
 RUN yum install -y $SYSTEM_PACKAGES >/dev/null
+
+# reinstall certain system packages for man pages
+RUN yum reinstall -y $REINSTALL_SYSTEM_PACKAGES >/dev/null
 
 # install pip packages
 RUN pip install --upgrade pip >/dev/null && \

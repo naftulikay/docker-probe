@@ -11,14 +11,3 @@ sudo docker run -it --rm naftulikay/probe
 ```
 
 You'll be dropped into a Bash shell with an assortment of valuable tools to get things done quickly.
-
-Tools included:
-
- - man-pages :tada:
- - netcat
- - netstat
- - nmap
- - pip
- - python
-
-:raised_hands: :sun_with_face:
