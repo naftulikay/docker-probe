@@ -5,7 +5,7 @@ MAINTAINER Naftuli Kay <rfkrocktk@gmail.com>
 ENV BUILD_DATE=20161207
 
 # packages
-ENV SYSTEM_PACKAGES="jq man-db man-pages openssl-devel python-pip tmux nc nmap vim wget"
+ENV SYSTEM_PACKAGES="bind-utils jq man-db man-pages openssl-devel python-pip tmux traceroute nc nmap vim wget"
 ENV REINSTALL_SYSTEM_PACKAGES="curl"
 
 ENV PYTHON_PACKAGES="awscli ipython requests"
