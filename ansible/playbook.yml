@@ -1,0 +1,27 @@
+---
+ - hosts: all
+   become: true
+   tasks:
+     - name: install epel
+       package: name=epel-release state=present
+
+     - name: install system devel packages
+       package: name={{ item }} state=present
+       with_items:
+         - bash-completion
+         - git
+         - vim
+
+     - name: install docker repository
+       yum_repository:
+         name: docker
+         description: Docker Upstream Repository
+         baseurl: https://yum.dockerproject.org/repo/main/centos/7/
+         gpgkey: https://yum.dockerproject.org/gpg
+         gpgcheck: true
+
+     - name: install docker
+       package: name=docker-engine state=present
+
+     - name: ensure docker started
+       service: name=docker state=started enabled=true
