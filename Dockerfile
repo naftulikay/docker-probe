@@ -2,10 +2,10 @@ FROM centos:7
 MAINTAINER Naftuli Kay <rfkrocktk@gmail.com>
 
 # security environment variable for tainting the image when necessary
-ENV BUILD_DATE=20161207
+ENV BUILD_DATE=20161208
 
 # packages
-ENV SYSTEM_PACKAGES="bind-utils jq man-db man-pages openssl-devel python-pip tmux traceroute nc nmap vim wget"
+ENV SYSTEM_PACKAGES="bind-utils jq man-db man-pages openssl-devel python-pip tmux traceroute net-tools nc nmap vim wget"
 ENV REINSTALL_SYSTEM_PACKAGES="curl"
 
 ENV PYTHON_PACKAGES="awscli ipython requests"
